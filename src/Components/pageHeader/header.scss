@@ -1,0 +1,58 @@
+@import '../../styles/partials/colors';
+@import '../../styles/partials/global';
+.Header__top{
+    display: flex;
+    justify-content: space-around;
+}
+.Header__input{
+
+height: 3.5rem;
+width: 15rem;
+
+border-radius: 0.5rem;
+ 
+ 
+    &::placeholder
+ {
+    color: $secondrycolor_1;
+    font-size: 16px;
+    font-weight: normal;
+    position: relative;
+    left: 3rem;
+    top:4px
+ }
+
+
+}
+
+.Header__Icon{
+
+
+
+position: relative;
+left: 2.7rem;
+top:0.5rem;
+
+}
+.Header__avatar img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    
+}
+.Header__button{
+    background-color: blue;
+    color: white;
+    width: 90%;
+    height: 3rem;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+.Header__bottom--upload{
+    
+    position:absolute;
+    left: 2rem;
+    margin-top: 1.3rem;
+}

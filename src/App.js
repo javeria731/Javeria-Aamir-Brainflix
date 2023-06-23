@@ -1,11 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import  Headerlogo from './Components/logo/Headerlogo';
+import Header from './Components/pageHeader/Header';
+import VideoContainer from './Components/VideoContainer/VideoContainer';
+import Video from './Components/Video/Video';
+
+
 
 function App() {
   return (
     <div>
      
-      <h1>tester</h1>
+   <Headerlogo />
+   <Header />
+   <VideoContainer />
+   <Video />
+      
     </div>
   );
 }

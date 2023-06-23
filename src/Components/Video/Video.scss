@@ -1,0 +1,44 @@
+.Videolist__container {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  .Videolist__item {
+    display: flex;
+    
+   
+  }
+  
+  .Videolist__imagelist {
+    width: 7rem;
+    height: 5rem;
+    margin: 1rem;
+   
+    
+  }
+  
+  .Videolist__image {
+    width: 8rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 0.25rem; 
+  }
+  
+  .Videolist__details {
+    margin-top: 10px;
+   margin-left: 2rem;
+
+  }
+  
+  .Videolist__title {
+    font-size: 18px;
+    margin-bottom: 5px;
+    
+  }
+  
+  .Videolist__channel {
+    font-size: 14px;
+    color: gray;
+  }
+  
