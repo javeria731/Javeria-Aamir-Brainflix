@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from "react";
 import videos from "../../data/videos.json";
 import './Video.scss';
+import VideoContainer from "../VideoContainer/VideoContainer";
 
-function Video() {
+const VideoList = () => {
+  const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
+
+  const handleVideoClick = (index) => {
+    setSelectedVideoIndex(index);
+  };
+
   return (
     <div className="Videolist__container">
-      {videos.map((video) => (
-        <div key={video.id} className="Videolist__item">
+      {videos.map((video, index) => (
+        <div key={video.id} className="Videolist__item" onClick={() => handleVideoClick(index)}>
           <div className="Videolist__imagelist">
             <img className="Videolist__image" src={video.image} alt="videos" />
           </div>
@@ -16,8 +23,11 @@ function Video() {
           </div>
         </div>
       ))}
+      {selectedVideoIndex !== null && (
+        <VideoContainer selectedVideoIndex={selectedVideoIndex} />
+      )}
     </div>
   );
-}
+};
 
-export default Video;
+export default VideoList;

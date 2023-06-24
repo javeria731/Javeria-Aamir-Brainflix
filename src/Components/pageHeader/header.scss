@@ -1,58 +1,185 @@
 @import '../../styles/partials/colors';
 @import '../../styles/partials/global';
-.Header__top{
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/mixins';
+
+
+.Header{
+
+    @include tablet{
+        display: flex;
+        gap:1rem;
+        
+    }
+
+    &__logo{
+    margin-left: 20%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 25px;
+    width: 120px;
+
+    @include tablet{
+        height: 2rem;
+        width: 8rem; 
+        margin-left: 7%;
+        margin-top: 2.5rem
+       }
+
+       @include desktop{
+        margin-left: 50%;
+      
+       }
+    }
+
+    &__top{
     display: flex;
-    justify-content: space-around;
-}
-.Header__input{
+    width: 100%;
+    margin: 1rem;
+    @include tablet {
+        
+    }
 
-height: 3.5rem;
-width: 15rem;
+    &__icons
+    {
+        position: relative;
+        left: 3rem;
+        top:0.5rem;
+    }
 
-border-radius: 0.5rem;
+    @include desktop{
+        
+    }
+    &__input{
+
+
+        height: 3.45rem;
+        width: 14rem;
+        margin-right: 2rem;
+        border-radius: 0.4rem;
+        margin-top: 1rem;
+        background-color: $secondrycolor_4;
+       
+    @include tablet{
+
+    width: 12rem;
+    height: 3rem;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    
+    
  
+    
+    }
+    @include desktop{
+        width: 18rem;
+    height: 4rem;
+    margin-left: 15rem;
+    margin-top: 1.3rem;
+    }
+
  
     &::placeholder
- {
+    {
     color: $secondrycolor_1;
     font-size: 16px;
     font-weight: normal;
     position: relative;
-    left: 3rem;
+    left: 3.3rem;
     top:4px
+    }
  }
-
-
+}
 }
 
-.Header__Icon{
 
-
-
-position: relative;
-left: 2.7rem;
-top:0.5rem;
-
-}
 .Header__avatar img{
-    height: 50px;
-    width: 50px;
+    height: 2.25rem;
+    width: 2.25rem;
     border-radius: 50%;
+    position: relative;
+ 
+
+    margin-top: 1rem;
+
+    @include tablet{
+        height: 2.5rem;
+        width: 2.5rem;
+        display: none;
+
+    }
     
 }
+.Header__avatartablet img{
+ display: none;
+    
+
+    @include tablet{
+        display: inline;
+
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        position: relative;
+        left: 12rem;
+        bottom: 5rem;
+        
+       
+    }
+    @include desktop{
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+        position: relative;
+        left: 12rem;
+        bottom: 6.4rem;
+    }
+}
 .Header__button{
-    background-color: blue;
-    color: white;
-    width: 90%;
+    background-color:$primarycolor_2;
+    color:$primarycolor_4;
+    border-color: transparent;
+    width:14rem;
     height: 3rem;
-    border-radius: 5px;
+    border-radius: 8px;
     text-align: center;
     margin-top: 0.5rem;
     margin-left: 1rem;
+
+
+    @include tablet{
+        
+        width: 9rem;
+        height: 3rem;
+        position: relative;
+        right: 13rem;
+        bottom: 2rem;
+        
+    
+    }
+    @include desktop{
+        width: 20rem;
+        height: 5rem;
+        position: relative;
+        right: 12rem;
+        bottom: 2.3rem;
+
+    }
 }
 .Header__bottom--upload{
     
     position:absolute;
     left: 2rem;
     margin-top: 1.3rem;
+   
+
+    @include tablet{
+        position: relative;
+        margin: 1rem;
+
+        
+      
+        
+    }
 }
+
