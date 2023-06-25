@@ -9,6 +9,7 @@
 .Videolist__container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   @include desktop{
 
@@ -18,7 +19,7 @@
 
 .Videolist__item {
   display: flex;
-  margin: 1rem;
+
 }
 
 .Videolist__imagelist {
@@ -45,9 +46,9 @@
 }
 
 .Videolist__title {
-  font-size: 18px;
+  font-size: 16px;
 
-   margin: 0.5rem;
+ 
   color: $secondrycolor_1;
   font-weight: bolder;
 
@@ -64,8 +65,8 @@
 .Videolist__channel {
   font-size: 14px;
   color: $primarycolor_1;
-  margin: 1rem;
-  font-size: 18px;
+
+  font-size: 16px;
 
   @include desktop{
     font-size: 20px;

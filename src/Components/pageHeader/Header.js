@@ -21,16 +21,8 @@ function Header() {
         <div>
          
           <div className="Header__top__input">
-            <TextField
-             placeholder="Search"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <img src={searchIcon} alt="Search Icon" />
-                  </InputAdornment>
-                ),
-              }}
-            />
+           <input type="text" placeholder='Search'></input>
+           <img src={searchIcon} alt='searchicon'/>
           </div>
         </div>
 
@@ -40,8 +32,9 @@ function Header() {
       </div>
 
       <div className="Header__bottom">
-        <img className="Header__bottom--upload" src={upload} alt="upload icon" />
+       
         <button className="Header__button">UPLOAD</button>
+        <img className="Header__bottom--upload" src={upload} alt="upload icon" />
         <div className="Header__avatartablet">
           <img src={avatar} alt="avatar" />
         </div>

@@ -8,8 +8,11 @@
 
     @include tablet{
         display: flex;
-        gap:1rem;
+        gap:2rem;
         
+    }
+    @include desktop{
+        gap: 3rem;
     }
 
     &__logo{
@@ -28,6 +31,8 @@
 
        @include desktop{
         margin-left: 50%;
+        height: 5rem;
+        width: 12rem;
       
        }
     }
@@ -37,6 +42,11 @@
     width: 100%;
     margin: 1rem;
     @include tablet {
+        
+    }
+
+    @include desktop{
+        display: flex;
         
     }
 
@@ -53,41 +63,77 @@
     &__input{
 
 
-        height: 3.45rem;
-        width: 14rem;
-        margin-right: 2rem;
-        border-radius: 0.4rem;
-        margin-top: 1rem;
-        background-color: $secondrycolor_4;
-       
+ 
+        & input{
+            height: 3.45rem;
+            width: 14rem;
+            margin-right: 2rem;
+            border-radius: 0.4rem;
+            margin-top: 1rem;
+            background-color: $secondrycolor_4;
+            border: 1px solid $primarycolor_3;
+
+            @include tablet{
+                height: 3.45rem;
+            width: 20rem;
+
+            @include desktop{
+                width: 32rem;
+                height: 4.8rem;
+                margin-left: 11rem;
+            }
+            }
+            &::placeholder
+            {
+            color: $secondrycolor_1;
+            font-size: 16px;
+            font-weight: normal;
+            position: relative;
+            left: 3rem;
+            bottom: 4px;  
+            
+            @include desktop{
+
+                font-size: 20px;
+                left:3.5rem
+            }
+            }
+        }
+    
+        & img{
+
+           position: relative;
+           right: 15rem;
+        
     @include tablet{
 
-    width: 12rem;
-    height: 3rem;
+    height: 2rem;
+    width: 2rem;
+    position: relative;
+   
+    bottom: 4rem;
+    right: 1.8rem;
     margin-top: 1rem;
     margin-left: 3rem;
-    
-    
- 
+  
     
     }
     @include desktop{
-        width: 18rem;
-    height: 4rem;
-    margin-left: 15rem;
-    margin-top: 1.3rem;
+        width: 3rem;
+        height: 3rem;
+        position: relative;
+       right: -9rem;
+        bottom: 4.9rem;
+    
+    
+    
+    
+    
+    
     }
-
+        }
  
-    &::placeholder
-    {
-    color: $secondrycolor_1;
-    font-size: 16px;
-    font-weight: normal;
-    position: relative;
-    left: 3.3rem;
-    top:4px;
-    }
+    
  }
 }
 }
@@ -121,7 +167,7 @@
         width: 2.5rem;
         border-radius: 50%;
         position: relative;
-        left: 2rem;
+        left: 10rem;
         bottom: 5rem;
         
        
@@ -131,7 +177,7 @@
         width: 3.5rem;
         border-radius: 50%;
         position: relative;
-        left: 12rem;
+        left: 14rem;
         bottom: 6.4rem;
     }
 }
@@ -146,14 +192,20 @@
     margin-top: 0.5rem;
     margin-left: 1rem;
 
+    &:hover {
+       
+       background-color:  $secondrycolor_2;
+   
+    }
 
     @include tablet{
         
-        width: 9rem;
+        width: 12rem;
         height: 3rem;
         position: relative;
-        right: 13rem;
-        bottom: 2rem;
+        right: 5rem;
+        top: 1.8rem;
+      
         
     
     }
@@ -161,21 +213,29 @@
         width: 20rem;
         height: 5rem;
         position: relative;
-        right: 12rem;
+        right: 9rem;
         bottom: 2.3rem;
 
     }
 }
-.Header__bottom--upload{
+.Header__bottom--upload
+{
     
-    position:absolute;
-    left: 2rem;
-    margin-top: 1.3rem;
-   
+    
+    position:relative;
+  right: 12rem;
+   top: 0.5rem;
+    margin-top: 1rem;
+
+  
 
     @include tablet{
-        position: relative;
-        margin: 1rem;
+        
+       position: relative;
+      left: -2rem;
+      
+      margin-top: 2rem;
+        
 
         
       
