@@ -1,27 +1,46 @@
 @import '../../styles/partials/colors';
 @import '../../styles/partials/global';
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/mixins';
 
 
-.MainVideo
-{
-    margin: 0 auto;
-    height: 400px;
-    width: 400px;
-}
+
 
 .Main__title{
-    color: black;
-    font-size:20px;
+    color: $secondrycolor_1;
+    font-size:24px;
+    line-height: 2rem;
     font-weight: bolder;
+    margin: 1rem;
+    border-bottom: 1px solid $primarycolor_3;
+    padding: 1rem;
+
+    @include tablet{
+        font-size:3rem;
+        margin: 1.5rem;
+        border-bottom: 1px solid transparent;
+       
+
+    }
 }
 .Main__description{
+    width: 100%;
     line-height: 1.5rem;
     margin: 1rem;
+    color: $primarycolor_1;
+    margin: 1rem 1rem 1rem 2rem;
+    padding-left: 0.5rem;
+
+    @include tablet{
+
+        width: 95%;
+        margin-left: 2rem;
+    }
+  
+
 }
 
-.comments{
-    background-color: green;
-}
+
 .comment__Namadate{
     display: flex;
     justify-content: space-between;
@@ -41,43 +60,6 @@
 }
 
 
-.Main__deatils{
-    display: flex;
-    gap: 6rem;
-    padding-top: 1rem;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black ;
-    margin: 1rem;
-}
-.MainVideo__left{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    & h1{
-        color: black;
-        font-size: larger;
-        font-weight: bolder;
-        margin-left: 1rem;
-    }
-
-    & p{
-        color: black;
-        margin-left: 1rem;
-    }
-    
-}
-.MainVideo__right{
-
-
-    & p{
-        color: black;
-        margin-left: 2rem;
-        position: relative;
-        bottom: 1.2rem;
-     
-    }
-}
 .comments__avatar{
     height: 2.25rem;
     width: 2.25rem;
@@ -93,3 +75,32 @@
     border-bottom: 1px solid black;
    margin: 1rem;
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+ 
+  
+@include tablet{
+
+
+    .container {
+      
+    }
+  
+    .VideoDetails {
+      order: 3; 
+    }
+  
+    .Main__description {
+      order: 2; 
+    }
+  }
+  .CommentsCount{
+   
+    font-weight: bolder;
+    font-size: 20px;
+    margin: 1rem;
+  }

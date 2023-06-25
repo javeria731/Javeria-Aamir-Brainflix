@@ -1,6 +1,7 @@
 import React from "react";
 import viewicons from "../../assets/Icons/views.svg";
 import likesicon from "../../assets/Icons/likes.svg";
+import './VideoDetails.scss'
 
 const VideoDetails = ({ video, formattedTimestamp }) => {
   return (

@@ -10,6 +10,7 @@ const Comment = ({ comment, formattedTimestamp }) => {
       <div className="comments__avatar"></div>
       <div className="Comments__text">
         <p>{comment.comment}</p>
+        
       </div>
     </div>
   );

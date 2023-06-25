@@ -1,0 +1,123 @@
+
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/colors';
+@import '../../styles/partials/global';
+@import '../../styles/partials/mixins';
+
+
+
+
+.comment__container{
+
+border-bottom: 1px solid $primarycolor_3;
+padding: 1rem;
+
+    @include tablet {
+        display: flex;
+      width: 100%;
+      margin-left: 1rem;
+    }
+
+}
+.Cmt__Heading{
+
+    color: $primarycolor_3;
+    font-size: 18px;
+    margin-left: 5.3rem;
+    margin-bottom: 0 auto;
+}
+
+.Cmt__Top{
+
+    display: flex;
+    gap:2rem;
+    margin-top: 1rem;
+
+
+
+    & img{
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        margin-left: 1rem;
+        @include tablet{
+
+           
+        }
+    }
+
+    
+}
+
+textarea{
+
+   height: 6rem;
+   width: 18rem;
+   border : 1px solid $secondrycolor_3;
+   background-color: $secondrycolor_4;
+   margin: 0 auto;
+
+   
+   &::placeholder
+   {
+   color: $secondrycolor_1;
+   font-size: 16px;
+   font-weight: normal;
+   position: relative;
+   left: 3.3rem;
+   top:4px;
+   background-color: red;
+   }
+
+   @include tablet{
+
+    width:22rem;
+    height: 3rem;
+    margin-left: 2rem;
+   }
+
+}
+.Cmt__button{
+
+    background-color: $primarycolor_2;
+    width: 15rem;
+    height: 3rem;
+    
+    bottom: 1.5rem;
+    margin: 1rem 1rem 1rem 5.4rem;
+    border-radius: 4px;
+margin-left: 2rem;
+    @include tablet{
+        height: 3rem;
+        width: 12rem;
+        margin-right: 3rem;
+    }
+
+
+
+    & p {
+    
+        color: $primarycolor_4;
+        font-size: 18px;
+        position:relative;
+        bottom: 2.5rem;
+        left: 5rem;
+     font-weight: bolder;
+      @include tablet{
+        
+      }
+     
+    }
+
+    & img{
+
+   
+        margin: 1rem;
+    }
+    
+}
+
+
+
+
+

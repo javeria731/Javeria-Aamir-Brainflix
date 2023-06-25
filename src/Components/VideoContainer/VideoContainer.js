@@ -6,6 +6,7 @@ import VideoPlayer from "../Videoplayer/Videoplayer";
 import VideoDetails from "../Videodetails/VideoDetails";
 import Comment from "../Comment/Comment";
 import Video from "../Video/Video";
+import Addcomment from "../addComment/Addcomment";
 
 const VideoContainer = (props) => {
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(
@@ -28,20 +29,25 @@ const VideoContainer = (props) => {
     return <div>Loading...</div>;
   }
 
+  const commentCount = selectedVideo.comments.length; // Count of comments
+
   return (
     <div id="parentContainer">
-      <div id="container">
+      <div className="container">
         <VideoPlayer video={selectedVideo} />
         <h1 className="Main__title">{selectedVideo.title}</h1>
         <p className="Main__description">{selectedVideo.description}</p>
         <VideoDetails video={selectedVideo} formattedTimestamp={formattedTimestamp} />
-        <div className="comments__container">
-          {selectedVideo.comments.map((comment) => (
-            <Comment key={comment.id} comment={comment} formattedTimestamp={formattedTimestamp} />
-          ))}
-        </div>
-        <Video videos={sideVideos} handleVideoClick={handleVideoClick} />
       </div>
+      <h1 className="CommentsCount"> {commentCount} Comments</h1> 
+      <Addcomment />
+      <div className="comments__container">
+       
+        {selectedVideo.comments.map((comment) => (
+          <Comment key={comment.id} comment={comment} formattedTimestamp={formattedTimestamp} />
+        ))}
+      </div>
+      <Video videos={sideVideos} handleVideoClick={handleVideoClick} />
     </div>
   );
 };
