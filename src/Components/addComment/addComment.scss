@@ -10,7 +10,7 @@
 .comment__container{
 
 border-bottom: 1px solid $primarycolor_3;
-padding: 1rem;
+margin: 1rem;
 
     @include tablet {
         display: flex;
@@ -47,15 +47,17 @@ padding: 1rem;
     }
 
     
-}
 
-textarea{
+
+textarea
+{
 
    height: 6rem;
    width: 18rem;
    border : 1px solid $secondrycolor_3;
    background-color: $secondrycolor_4;
    margin: 0 auto;
+   background-color: red($color: #000000);
 
    
    &::placeholder
@@ -66,7 +68,7 @@ textarea{
    position: relative;
    left: 3.3rem;
    top:4px;
-   background-color: red;
+ 
    }
 
    @include tablet{
@@ -77,6 +79,7 @@ textarea{
    }
 
 }
+}
 .Cmt__button{
 
     background-color: $primarycolor_2;
@@ -86,7 +89,7 @@ textarea{
     bottom: 1.5rem;
     margin: 1rem 1rem 1rem 5.4rem;
     border-radius: 4px;
-margin-left: 2rem;
+
     @include tablet{
         height: 3rem;
         width: 12rem;

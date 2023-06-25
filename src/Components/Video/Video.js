@@ -9,9 +9,11 @@ const VideoList = (props) => {
     props.handleVideoClick(videoIndex);
   };
 
+  const sideVideos = videos.filter((video) => video.id !== props.selectedVideoId);
+
   return (
     <div className="Videolist__container">
-      {videos.map((video) => (
+      {sideVideos.map((video) => (
         <VideoListItem key={video.id} video={video} handleVideoClick={handleVideoClick} />
       ))}
     </div>

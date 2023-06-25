@@ -1,4 +1,5 @@
 import React from "react";
+import'./Comments.scss';
 
 const Comment = ({ comment, formattedTimestamp }) => {
   return (

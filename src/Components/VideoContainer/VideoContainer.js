@@ -29,25 +29,41 @@ const VideoContainer = (props) => {
     return <div>Loading...</div>;
   }
 
-  const commentCount = selectedVideo.comments.length; // Count of comments
+  const commentCount = selectedVideo.comments.length;
 
   return (
     <div id="parentContainer">
-      <div className="container">
-        <VideoPlayer video={selectedVideo} />
-        <h1 className="Main__title">{selectedVideo.title}</h1>
-        <p className="Main__description">{selectedVideo.description}</p>
-        <VideoDetails video={selectedVideo} formattedTimestamp={formattedTimestamp} />
+      <div className="Parent__display">
+      <VideoPlayer video={selectedVideo} />
+        <div className="video-container">
+          
+          
+          <div className="video-container__left">
+            <h1 className="Main__title">{selectedVideo.title}</h1>
+            <p className="Main__description">{selectedVideo.description}</p>
+            <VideoDetails video={selectedVideo} formattedTimestamp={formattedTimestamp} />
+            <h1 className="CommentsCount">{commentCount} Comments</h1>
+            <Addcomment />
+            <div className="comments__container">
+              {selectedVideo.comments.map((comment) => (
+                <Comment key={comment.id} comment={comment} formattedTimestamp={formattedTimestamp} />
+
+              ))
+              }
+             
+            </div>
+            </div>
+            <div className="tester">
+        <Video videos={sideVideos} handleVideoClick={handleVideoClick} selectedVideoId={selectedVideo.id} />
       </div>
-      <h1 className="CommentsCount"> {commentCount} Comments</h1> 
-      <Addcomment />
-      <div className="comments__container">
-       
-        {selectedVideo.comments.map((comment) => (
-          <Comment key={comment.id} comment={comment} formattedTimestamp={formattedTimestamp} />
-        ))}
+          
+          
+        </div>
+        
+
+        
+        
       </div>
-      <Video videos={sideVideos} handleVideoClick={handleVideoClick} />
     </div>
   );
 };
