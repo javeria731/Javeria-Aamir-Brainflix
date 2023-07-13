@@ -3,6 +3,8 @@ import Header from './Components/pageHeader/Header';
 import VideoContainer from './Components/VideoContainer/VideoContainer';
 import './styles/main.scss';
 import {BrowserRouter ,Routes ,Route} from "react-router-dom";
+import Header from './Components/pageHeader/Header';
+import Upload from './pages/Upload';
 
 
 
@@ -10,15 +12,16 @@ function App() {
   return (
     <div>
      
-
-   <Header />
+<Upload />
+  
    <VideoContainer />
    
    <BrowserRouter>
+   <Header />
    <Routes>
 
 
-    <Route></Route>
+  <Route path='/Upload' element={<Header />}/>
    </Routes>
    
    </BrowserRouter>
