@@ -9,8 +9,8 @@ const VideoList = (props) => {
     props.handleVideoClick(videoIndex);
   };
 
-  const sideVideos = videos.filter((video) => video.id !== props.selectedVideoId);
   const mainVideo = videos.find((video) => video.id === props.selectedVideoId);
+  const sideVideos = videos.filter((video) => video.id !== mainVideo.id);
 
   return (
     <div className="Videolist__container">
