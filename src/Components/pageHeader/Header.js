@@ -9,12 +9,15 @@ import avatar from '../../assets/Images/Mohan-muruge.jpg';
 import upload from '../../assets/Icons/upload.svg';
 import logo from '../../assets/Logo/BrainFlix-logo.svg';
 import './header.scss';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <div className="Header">
       <div>
+        <Link to ="/">
         <img className="Header__logo" src={logo} alt="Brain flix-logo" />
+        </Link>
       </div>
 
       <div className="Header__top">

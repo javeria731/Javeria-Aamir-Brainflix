@@ -1,32 +1,19 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Components/pageHeader/Header';
 import VideoContainer from './Components/VideoContainer/VideoContainer';
 import './styles/main.scss';
-import {BrowserRouter ,Routes ,Route} from "react-router-dom";
-import Header from './Components/pageHeader/Header';
 import Upload from './pages/Upload';
-
-
 
 function App() {
   return (
-    <div>
-     
-
-  
-   <VideoContainer />
-   
-   <BrowserRouter>
-   <Header />
-   <Routes>
-
-
-  <Route path='/Upload' element={<Header />}/>
-   </Routes>
-   
-   </BrowserRouter>
-      
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<VideoContainer />} />
+        <Route path="/upload" element={<Upload />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

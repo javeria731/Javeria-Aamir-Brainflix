@@ -1,0 +1,111 @@
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/colors';
+@import '../../styles/partials/global';
+@import '../../styles/partials//mixins';
+
+.videoThumnNail{
+
+   width: 100%; 
+   margin: 1rem;
+
+   & input{
+
+    width: 90%;
+    background-color: $secondrycolor_4;
+    height: 2rem;
+    border: 1px solid $secondrycolor_3;
+    border-radius: 4px;
+    &::placeholder {
+       color:$secondrycolor_1;
+       margin: 1rem;
+       font-size: 12px;
+       padding-left: 0.5rem;
+       font-weight: lighter;
+
+
+    }
+   }
+   & textarea{
+    width: 90%;
+    background-color: $secondrycolor_4;
+    height: 4.5rem;
+    border: 1px solid $secondrycolor_3;
+    border-radius: 4px;
+    &::placeholder {
+        color:$secondrycolor_1;
+       padding-top: 0.5rem;
+        font-size: 12px;
+        padding-left: 0.5rem;
+        font-weight: lighter;
+ 
+ 
+     }
+
+   }
+
+
+   &__heading{
+ color:$primarycolor_1;
+ border-top: 1px solid $secondrycolor_3;
+
+ padding-top: 1rem;
+ font-size: 24px;
+ font-weight:600;
+   }
+
+
+&__title{
+
+    color:$primarycolor_3;
+    font-size: 12px;
+    font-weight: 450;
+    margin-top: 1rem;
+    margin-bottom: 5px;
+}
+&__image{
+
+    height: 9rem;
+    width:90%;
+ 
+    
+    border-radius: 0.25rem;
+
+}
+}
+.publishIcon{
+
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primarycolor_2;
+  color: $primarycolor_4;
+  border: none;
+  width: 90%;
+  height: 2.5rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+   
+
+    &__image
+    {
+        position:relative;
+   right: 6rem;
+    
+    }
+    
+}
+.Cancelbutton
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primarycolor_4;
+    color: $primarycolor_2;
+    border: none;
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}

@@ -1,20 +1,21 @@
 body {
   @font-face {
     font-family: 'Avenir';
-    src: url('../../assets/Font/AvenirNextLTPro-Regular.otf') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../../assets/Font/AvenirNextLTPro-Bold.woff2') format('woff2');
+    font-weight: bold;
+    
   }
-
+  
   @font-face {
     font-family: 'Avenir';
-    src: url('../../assets/Font/AvenirNextLTPro-Bold.otf') format('woff2');
-    font-weight: 700;
-    font-style: normal;
+    src: url('../../assets/Font/AvenirNextLTPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    
   }
-  font-family: 'Avenir';
- 
-}
+  
+  
+    font-family: 'Avenir';
+  }
 
 html
 {
@@ -55,7 +56,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
