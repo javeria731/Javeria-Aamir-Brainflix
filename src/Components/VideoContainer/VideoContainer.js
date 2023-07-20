@@ -1,68 +1,70 @@
-import React, { useState } from "react";
-import Videodetails from "../../data/video-details.json";
-import videos from "../../data/videos.json";
-import "./VideoContainer.scss";
+import React, { useState, useEffect } from "react";
 import VideoPlayer from "../Videoplayer/Videoplayer";
 import VideoDetails from "../Videodetails/VideoDetails";
 import Comment from "../Comment/Comment";
-import Video from "../Video/Video";
+import VideoList from "../Video/Video";
 import Addcomment from "../addComment/Addcomment";
+import { fetchVideos } from "../../api";
 
-const VideoContainer = (props) => {
-  const [selectedVideoIndex, setSelectedVideoIndex] = useState(
-    props.selectedVideoIndex !== undefined ? props.selectedVideoIndex : 0
-  );
-  const selectedVideo = Videodetails[selectedVideoIndex];
-  const sideVideos = videos.filter((video) => video.id !== selectedVideo.id);
+const VideoContainer = () => {
+  const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
+  const [videos, setVideos] = useState([]);
 
-  const formattedTimestamp = new Date(selectedVideo.timestamp).toLocaleString("en-US", {
+  useEffect(() => {
+    const fetchVideoData = async () => {
+      try {
+        const videosData = await fetchVideos();
+        setVideos(videosData);
+      } catch (error) {
+        console.error("Error fetching videos:", error);
+        setVideos([]);
+      }
+    };
+
+    fetchVideoData();
+  }, []);
+
+  const selectedVideo = videos[selectedVideoIndex];
+  const sideVideos = videos.filter((video) => video.id !== selectedVideo?.id);
+  const comments = selectedVideo?.comments || [];
+
+  const formattedTimestamp = new Date(selectedVideo?.timestamp).toLocaleString("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",
   });
 
-  const handleVideoClick = (index) => {
-    setSelectedVideoIndex(index);
+  const handleVideoClick = (videoIndex) => {
+    setSelectedVideoIndex(videoIndex);
   };
 
   if (!selectedVideo) {
     return <div>Loading...</div>;
   }
 
-  const commentCount = selectedVideo.comments.length;
-
   return (
     <div id="parentContainer">
       <div className="Parent__display">
-      <VideoPlayer video={selectedVideo} />
+        <VideoPlayer video={selectedVideo} />
         <div className="video-container">
-          
-          
           <div className="video-container__left">
             <h1 className="Main__title">{selectedVideo.title}</h1>
             <p className="Main__description">{selectedVideo.description}</p>
             <VideoDetails video={selectedVideo} formattedTimestamp={formattedTimestamp} />
-            <h1 className="CommentsCount">{commentCount} Comments</h1>
+            <h1 className="CommentsCount">{comments.length} Comments</h1>
             <Addcomment />
             <div className="comments__container">
-              {selectedVideo.comments.map((comment) => (
-                <Comment key={comment.id} comment={comment} formattedTimestamp={formattedTimestamp} />
-
-              ))
-              }
-             
+              {comments.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  comment={comment}
+                  formattedTimestamp={formattedTimestamp}
+                />
+              ))}
             </div>
-            </div>
-            <div className="tester">
-        <Video videos={sideVideos} handleVideoClick={handleVideoClick} selectedVideoId={selectedVideo.id} />
-      </div>
-          
-          
+          </div>
+          <VideoList selectedVideoId={selectedVideo.id} handleVideoClick={handleVideoClick} />
         </div>
-        
-
-        
-        
       </div>
     </div>
   );

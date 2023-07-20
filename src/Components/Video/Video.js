@@ -3,14 +3,9 @@ import videos from "../../data/videos.json";
 import "./Video.scss";
 import VideoListItem from "../VideoListItem/VideoListItem";
 
-const VideoList = (props) => {
-  const handleVideoClick = (videoId) => {
-    const videoIndex = videos.findIndex((x) => x.id === videoId);
-    props.handleVideoClick(videoIndex);
-  };
-
-  const mainVideo = videos.find((video) => video.id === props.selectedVideoId);
-  const sideVideos = videos.filter((video) => video.id !== mainVideo.id);
+const VideoList = ({ selectedVideoId, handleVideoClick }) => {
+  const mainVideo = videos.find((video) => video.id === selectedVideoId);
+  const sideVideos = videos.filter((video) => video.id !== mainVideo?.id);
 
   return (
     <div className="Videolist__container">

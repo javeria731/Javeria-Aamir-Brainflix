@@ -16,7 +16,7 @@ function Header() {
     <div className="Header">
       <div>
         <Link to ="/">
-        <img className="Header__logo" src={logo} alt="Brain flix-logo" />
+          <img className="Header__logo" src={logo} alt="Brain flix-logo" />
         </Link>
       </div>
 
@@ -35,9 +35,10 @@ function Header() {
       </div>
 
       <div className="Header__bottom">
-       
-        <button className="Header__button">UPLOAD</button>
-        <img className="Header__bottom--upload" src={upload} alt="upload icon" />
+        <Link to="/Upload">
+          <button className="Header__button">UPLOAD</button>
+          <img className="Header__bottom--upload" src={upload} alt="upload icon" />
+       </Link>
         <div className="Header__avatartablet">
           <img src={avatar} alt="avatar" />
         </div>
