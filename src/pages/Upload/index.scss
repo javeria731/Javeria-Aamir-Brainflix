@@ -90,7 +90,7 @@
     &__image
     {
         position:relative;
-   right: 6rem;
+        right: 6rem;
     
     }
     
@@ -108,4 +108,10 @@
     border-radius: 4px;
     margin-top: 0.5rem;
     padding: 0.5rem;
+    &:hover {
+       
+      background-color:  $secondrycolor_2;
+  
+   }
+
 }

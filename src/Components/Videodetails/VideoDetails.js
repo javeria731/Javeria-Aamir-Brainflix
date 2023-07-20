@@ -1,23 +1,41 @@
-import React from "react";
-import viewicons from "../../assets/Icons/views.svg";
-import likesicon from "../../assets/Icons/likes.svg";
-import './VideoDetails.scss'
+import React, { useEffect, useState } from 'react';
+import { fetchVideosdetails } from '../../api';
+import NextVideoList from '../../pages/nextVideo'; // Assumit component in the same directory.
 
-const VideoDetails = ({ video, formattedTimestamp }) => {
+const VideoDetailsPage = ({ match }) => {
+  const [videoDetails, setVideoDetails] = useState(null);
+
+  useEffect(() => {
+    const videoId = match.params.id;
+    fetchVideoDetails(videoId);
+  }, [match.params.id]);
+
+  const fetchVideoDetails = async (videoId) => {
+    try {
+      const response = await fetchVideosdetails(videoId);
+      setVideoDetails(response); // Assuming the response contains all the video details including "nextVideos" property.
+    } catch (error) {
+      console.error('Error fetching video details:', error);
+    }
+  };
+
+  if (!videoDetails) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="Main__details">
-      <div className="MainVideo__left">
-        <h1>{video.channel}</h1>
-        <p>{formattedTimestamp}</p>
-      </div>
-      <div className="MainVideo__right">
-        <img src={viewicons} alt="viewicon" />
-        <p>{video.views}</p>
-        <img src={likesicon} alt="likesicon" />
-        <p>{video.likes}</p>
-      </div>
+    <div>
+      {/* Display video details */}
+      <h2>{videoDetails.title}</h2>
+      <p>Likes: {videoDetails.likes}</p>
+      <p>Views: {videoDetails.views}</p>
+      <p>Author: {videoDetails.author}</p>
+      {/* Add more details as needed */}
+
+      {/* Display the "Next Video" list */}
+      <NextVideoList videos={videoDetails.nextVideos} />
     </div>
   );
 };
 
-export default VideoDetails;
+export default VideoDetailsPage;

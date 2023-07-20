@@ -6,6 +6,8 @@
 
 .Header{
 
+    width:100%;
+
     @include tablet{
         display: flex;
         gap:2rem;
@@ -182,15 +184,27 @@
     }
 }
 .Header__button{
-    background-color:$primarycolor_2;
-    color:$primarycolor_4;
-    border-color: transparent;
-    width:14rem;
-    height: 3rem;
-    border-radius: 8px;
-    text-align: center;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primarycolor_2;
+  color: $primarycolor_4;
+  border: none;
+  width: 90%;
+  height: 2.5rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  
+   
+
+    &__image
+    {
+        position:relative;
+        right: 6rem;
+    
+    }
 
     &:hover {
        
