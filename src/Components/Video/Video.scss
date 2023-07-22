@@ -1,0 +1,77 @@
+@import '../../styles/partials/colors';
+@import '../../styles/partials/global';
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/mixins';
+
+
+
+
+.Videolist__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include desktop{
+
+    
+  }
+}
+
+.Videolist__item {
+  display: flex;
+
+}
+
+.Videolist__imagelist {
+  width: 7rem;
+  height: 5rem;
+  margin: 1rem;
+}
+
+.Videolist__image {
+  width: 8rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 0.25rem; 
+
+  @include desktop{
+    width: 10rem;
+    height: 5rem;
+  }
+}
+
+.Videolist__details {
+  margin-top: 10px;
+  margin-left: 2rem;
+}
+
+.Videolist__title {
+  font-size: 16px;
+
+ 
+  color: $secondrycolor_1;
+  font-weight: bolder;
+
+  @include desktop{
+
+    font-size: 24px;
+
+    margin: 0.5rem;
+   color: $secondrycolor_1;
+   font-weight: bolder;
+  }
+}
+
+.Videolist__channel {
+  font-size: 14px;
+  color: $primarycolor_1;
+
+  font-size: 16px;
+
+  @include desktop{
+    font-size: 20px;
+
+  }
+}
+
+

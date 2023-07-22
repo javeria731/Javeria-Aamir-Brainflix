@@ -1,0 +1,15 @@
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/mixins';
+
+
+.MainVideo
+{
+  
+
+    width: 400px;
+    margin-top: 1rem;
+    @include tablet{
+        width: 100%;
+    }
+  
+}
