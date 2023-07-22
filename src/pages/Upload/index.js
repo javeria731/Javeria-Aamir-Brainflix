@@ -2,11 +2,12 @@ import React from 'react';
 import videoThumbNail from '../../assets/Images/Upload-video-preview.jpg';
 
 import publishIcon from '../../assets/Icons/publish.svg';
-import './upload.scss';
+
 import { useNavigate } from 'react-router-dom'; 
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import "./upload.scss";
 
 function Upload() {
   const navigate = useNavigate(); 

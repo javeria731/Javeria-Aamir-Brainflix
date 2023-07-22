@@ -1,12 +1,25 @@
-import React from 'react'
-import VideoContainer from '../../Components/VideoContainer/VideoContainer'
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function Home() {
+function HomePage({ videos }) {
+  const [mainVideo, setMainVideo] = useState(null);
+
+  useEffect(() => {
+    if (videos.length > 0) {
+      setMainVideo(videos[0]);
+    }
+  }, [videos]);
+
+  if (!mainVideo) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
-      <VideoContainer />
+      {/* Render main video here */}
+      <Link to={`/videos/${mainVideo.id}`}>Watch Video Details</Link>
     </div>
-  )
+  );
 }
 
-export default Home
+export default HomePage;

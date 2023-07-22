@@ -65,7 +65,7 @@ const VideoContainer = () => {
             <VideoList
               selectedVideoId={selectedVideo.id}
               videos={videos}
-              handleVideoClick={handleVideoClick} 
+              handleVideoClick={handleVideoClick}
             />
           </div>
         </div>
