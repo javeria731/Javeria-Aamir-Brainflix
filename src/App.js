@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<VideoContainer />} />
         <Route path="/upload" element={<Upload />} />
-        <Route exact path="/video/:videoId" element={<VideoContainer />} />
+        <Route exact path="/videos/:videoId" element={<VideoContainer />} />
       </Routes>
     </BrowserRouter>
       /* <Routes>

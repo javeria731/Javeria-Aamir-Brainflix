@@ -27,7 +27,7 @@ const VideoContainer = () => {
   useEffect(() => {
    
       if (videos.length > 0) {
-        console.log("fetching vidoe");
+        console.log("fetching vidoe" ,videoId);
       fetchSingleVideo(videoId || videos[0].id).then(response =>{
         console.log(response);
         setSelectedVideo(response);
@@ -37,11 +37,11 @@ const VideoContainer = () => {
   }, [videos,videoId]);
 
 
-  const handleVideoClick = async (videoIndex) => {
+ /* const handleVideoClick = async (videoIndex) => {
     const selectedVideoId = videos[videoIndex].id;
     const videoData = await fetchSingleVideo(selectedVideoId);
     setSelectedVideo(videoData);
-  };
+  };*/
 
   if (!videos.length || !selectedVideo) {
     return <div>Loading...</div>;
@@ -78,7 +78,7 @@ const VideoContainer = () => {
             <VideoList
               selectedVideoId={selectedVideo.id}
               videos={videos}
-              handleVideoClick={handleVideoClick}
+              
             />
           </div>
         </div>
