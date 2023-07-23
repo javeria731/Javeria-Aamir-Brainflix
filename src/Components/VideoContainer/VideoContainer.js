@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, } from "react";
 import "./VideoContainer.scss";
 import VideoPlayer from "../Videoplayer/Videoplayer";
 import VideoDetails from "../Videodetails/VideoDetails";
@@ -7,22 +7,35 @@ import Addcomment from "../addComment/Addcomment";
 
 import VideoList from "../Video/Video";
 import { fetchVideos, fetchSingleVideo } from "../../api";
+import { useParams } from "react-router-dom";
+
 
 const VideoContainer = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [videos, setVideos] = useState([]);
-
+  const {videoId} = useParams();
   useEffect(() => {
     const fetchVideoData = async () => {
       const videosData = await fetchVideos();
       setVideos(videosData);
-      if (videosData.length > 0) {
-        const videoData = await fetchSingleVideo(videosData[0].id);
-        setSelectedVideo(videoData);
-      }
+      
     };
     fetchVideoData();
   }, []);
+
+
+  useEffect(() => {
+   
+      if (videos.length > 0) {
+        console.log("fetching vidoe");
+      fetchSingleVideo(videoId || videos[0].id).then(response =>{
+        console.log(response);
+        setSelectedVideo(response);
+        
+      })
+    }
+  }, [videos,videoId]);
+
 
   const handleVideoClick = async (videoIndex) => {
     const selectedVideoId = videos[videoIndex].id;
