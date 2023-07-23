@@ -3,7 +3,7 @@
 @import '../../styles/partials/global';
 @import '../../styles/partials//mixins';
 
-.videoThumnNail{
+.videoThumbnail{
 
    width: 100%; 
    margin: 1rem;
@@ -95,8 +95,9 @@
     }
     
 }
-.Cancelbutton
+.CancelButton
 {
+  background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
