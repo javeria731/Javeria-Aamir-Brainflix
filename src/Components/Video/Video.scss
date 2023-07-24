@@ -20,23 +20,38 @@
 .Videolist__item {
   display: flex;
 
+  @include desktop{
+   
+    width: 70%;
+    gap:3.5rem;
+  }
 }
 
 .Videolist__imagelist {
   width: 7rem;
   height: 5rem;
-  margin: 1rem;
+
+  @include desktop{
+
+ 
+  }
+
 }
 
 .Videolist__image {
-  width: 8rem;
-  height: 4rem;
+  width: 7rem;
+  height: 3.5rem;
   object-fit: cover;
   border-radius: 0.25rem; 
+  margin-left: 2rem;
 
   @include desktop{
-    width: 10rem;
-    height: 5rem;
+   
+height:4rem;
+   width: 9rem;
+   margin: 1rem;
+
+    
   }
 }
 
@@ -46,15 +61,18 @@
 }
 
 .Videolist__title {
-  font-size: 16px;
+  font-size: 12px;
+  margin-left: 1rem;
+  font-weight: 550;
+  line-height: 1rem;
 
  
   color: $secondrycolor_1;
-  font-weight: bolder;
+ 
 
   @include desktop{
 
-    font-size: 24px;
+    font-size: 16px;
 
     margin: 0.5rem;
    color: $secondrycolor_1;
@@ -63,15 +81,21 @@
 }
 
 .Videolist__channel {
-  font-size: 14px;
+  font-size: 12px;
   color: $primarycolor_1;
 
-  font-size: 16px;
+ margin-top: 0.5rem;
+  margin-left: 1rem;
 
   @include desktop{
-    font-size: 20px;
+    font-size: 16px;
 
   }
+}
+.tester{
+ 
+  height: 100%;
+  margin-top: 2rem;
 }
 
 

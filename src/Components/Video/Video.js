@@ -10,7 +10,7 @@ const VideoList = (props) => {
 
   return (
     <div className="VideoList__container">
-      {/* Render the list of video items */}
+     
       {props.videos.map((video, index) => (
         <VideoListItem key={video.id} video={video} handleVideoClick={() => handleVideoItemClick(index)} />
       ))}

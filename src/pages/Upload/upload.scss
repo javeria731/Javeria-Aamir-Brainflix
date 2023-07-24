@@ -15,6 +15,12 @@
     height: 2rem;
     border: 1px solid $secondrycolor_3;
     border-radius: 4px;
+
+    @include tablet{
+
+      margin-left: 1rem;
+      
+    }
     &::placeholder {
        color:$secondrycolor_1;
        margin: 1rem;
@@ -31,6 +37,11 @@
     height: 4.5rem;
     border: 1px solid $secondrycolor_3;
     border-radius: 4px;
+    @include tablet{
+
+      margin-left: 1rem;
+      
+    }
     &::placeholder {
         color:$secondrycolor_1;
        padding-top: 0.5rem;
@@ -51,6 +62,17 @@
  padding-top: 1rem;
  font-size: 24px;
  font-weight:600;
+
+ padding-top: 2rem;
+ padding-bottom: 2rem;
+
+ @include tablet{
+
+  margin-left: 1rem;
+  border-bottom: 1px solid $secondrycolor_3;
+  
+  
+}
    }
 
 
@@ -61,11 +83,23 @@
     font-weight: 450;
     margin-top: 1rem;
     margin-bottom: 5px;
+    @include tablet{
+
+      margin-left: 1rem;
+      
+    }
 }
 &__image{
 
     height: 9rem;
     width:90%;
+
+    @include tablet{
+
+      width: 45%;
+      height: 12rem;
+      margin-left: 1rem;
+    }
  
     
     border-radius: 0.25rem;
@@ -85,6 +119,14 @@
   border-radius: 4px;
   margin-top: 0.5rem;
   padding: 0.5rem;
+
+  @include tablet{
+   
+    width: 30%;
+    float: right;
+    margin-right: 4rem;
+  
+  }
    
 
     &__image
@@ -97,7 +139,7 @@
 }
 .CancelButton
 {
-  background-color: red;
+ 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,4 +151,10 @@
     border-radius: 4px;
     margin-top: 0.5rem;
     padding: 0.5rem;
+    @include tablet{
+
+      width: 30%;
+      
+      margin-left: 10rem;
+    }
 }
