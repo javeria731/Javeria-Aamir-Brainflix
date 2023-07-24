@@ -11,9 +11,9 @@ import { useParams } from "react-router-dom";
 
 const formatDate = (dateString) => {
   return new Date(dateString).toLocaleString("en-US", {
-    month: "2-digit", // Use two digits for the month (e.g., 07)
-    day: "2-digit",   // Use two digits for the day (e.g., 11)
-    year: "numeric",  // Use all four digits for the year (e.g., 2021)
+    month: "2-digit", 
+    day: "2-digit",   
+    year: "numeric",  
   });
 };
 

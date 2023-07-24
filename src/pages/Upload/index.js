@@ -1,19 +1,17 @@
-
 import "./upload.scss";
-
 
 import React from 'react';
 import videoThumbNail from '../../assets/Images/Upload-video-preview.jpg';
 
 import publishIcon from '../../assets/Icons/publish.svg';
 
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function Upload() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({
     title: '',
     description: '',
@@ -35,10 +33,16 @@ function Upload() {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    toast.success('Video uploaded successfully!');
-    navigate('/')
+    
+
+    
+    
+    navigate('/success'); 
+    await new Promise((resolve) => setTimeout(resolve, 1000)); 
+   
+    navigate('/'); 
   };
 
   return (
@@ -48,9 +52,9 @@ function Upload() {
         <p className='videoThumbnail__title'>VIDEO THUMBNAIL</p>
         <img className='videoThumbnail__image' src={videoThumbNail} alt="Video Thumbnail" />
         <p className='videoThumbnail__title'>TITLE YOUR VIDEO</p>
-        <input type='text' placeholder='Add a title to your video' />
+        <input type='text' placeholder='Add a title to your video' name="title" onChange={handleInputChange} />
         <p className='videoThumbnail__title'>ADD A VIDEO DESCRIPTION</p>
-        <textarea placeholder='Add a description to your video'></textarea>
+        <textarea placeholder='Add a description to your video' name="description" onChange={handleInputChange}></textarea>
         <button className="publishIcon" onClick={handleSubmit}>
           <img className="publishIcon__image" src={publishIcon} alt="publish icon" />
           PUBLISH
