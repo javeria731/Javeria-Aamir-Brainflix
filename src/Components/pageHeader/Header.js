@@ -37,11 +37,11 @@ function Header() {
       </div>
 
       <div className="Header__bottom">
-        <Link to="/Upload">
-          <button className="Header__button">
-          <img  src={upload} alt="upload icon" />UPLOAD
-          </button>
-       </Link>
+      <Link to="/upload">
+  <button className="Header__button" >
+    <img src={upload} alt="upload icon" /> UPLOAD
+  </button>
+</Link>
         <div className="Header__avatartablet">
           <img src={avatar} alt="avatar" />
         </div>

@@ -1,21 +1,14 @@
-import "./upload.scss";
-
-import React from 'react';
-import videoThumbNail from '../../assets/Images/Upload-video-preview.jpg';
-
-import publishIcon from '../../assets/Icons/publish.svg';
-
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-
-
+import videoThumbNail from '../../assets/Images/Upload-video-preview.jpg';
+import publishIcon from '../../assets/Icons/publish.svg';
+import './upload.scss';
 
 function Upload() {
   const navigate = useNavigate();
   const [formState, setFormState] = useState({
     title: '',
     description: '',
-    videoFile: null,
   });
 
   const handleInputChange = (event) => {
@@ -26,23 +19,33 @@ function Upload() {
     });
   };
 
-  const handleFileChange = (event) => {
-    setFormState({
-      ...formState,
-      videoFile: event.target.files[0],
-    });
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
 
-    
-    
-    navigate('/success'); 
-    await new Promise((resolve) => setTimeout(resolve, 1000)); 
-   
-    navigate('/'); 
+    const newVideo = {
+      title: formState.title,
+      description: formState.description,
+      image: 'https://i.imgur.com/DDJNZNw.jpg', // Hardcoded image path
+    };
+
+    try {
+      const response = await fetch('http://localhost:8082/videos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newVideo),
+      });
+
+      if (response.ok) {
+        console.log('Video uploaded successfully');
+        // Reset formState or navigate to success page
+      } else {
+        console.error('Failed to upload video');
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   };
 
   return (
