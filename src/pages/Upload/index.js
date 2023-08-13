@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import videoThumbNail from '../../assets/Images/Upload-video-preview.jpg';
 import publishIcon from '../../assets/Icons/publish.svg';
 import './upload.scss';
@@ -29,6 +31,7 @@ function Upload() {
     };
 
     try {
+      const apiUrl = process.env.REACT_APP_API_URL;
       const response = await fetch('http://localhost:8082/videos', {
         method: 'POST',
         headers: {
@@ -38,13 +41,12 @@ function Upload() {
       });
 
       if (response.ok) {
-        console.log('Video uploaded successfully');
-        // Reset formState or navigate to success page
+        toast.success('Video uploaded successfully', { autoClose: 3000 });
       } else {
-        console.error('Failed to upload video');
+        toast.error('Failed to upload video', { autoClose: 3000 });
       }
     } catch (error) {
-      console.error('An error occurred:', error);
+      toast.error('An error occurred', { autoClose: 3000 });
     }
   };
 
@@ -64,6 +66,7 @@ function Upload() {
         </button>
         <button className="CancelButton">CANCEL</button>
       </div>
+      <ToastContainer />
     </div>
   );
 }
